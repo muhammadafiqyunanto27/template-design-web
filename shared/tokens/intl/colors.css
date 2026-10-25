@@ -1,0 +1,110 @@
+/**
+ * International Color Tokens
+ * Base semantic color system - no purple gradients, max 1 subtle gradient per template
+ * All values are CSS custom properties for runtime theming
+ */
+
+:root {
+  /* ===== Semantic Base Colors ===== */
+  --color-bg: #ffffff;
+  --color-bg-elevated: #fafafa;
+  --color-bg-subtle: #f5f5f5;
+  --color-bg-inverse: #0a0a0f;
+
+  --color-fg: #0a0a0f;
+  --color-fg-muted: #52525b;
+  --color-fg-subtle: #71717a;
+  --color-fg-inverse: #fafafa;
+
+  --color-border: #e4e4e7;
+  --color-border-strong: #d4d4d8;
+  --color-border-focus: #2563eb;
+
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-light: #eff6ff;
+  --color-accent-muted: #93c5fd;
+
+  /* ===== Status Colors ===== */
+  --color-success: #059669;
+  --color-success-light: #ecfdf5;
+  --color-success-muted: #6ee7b7;
+
+  --color-warning: #d97706;
+  --color-warning-light: #fffbeb;
+  --color-warning-muted: #fcd34d;
+
+  --color-error: #dc2626;
+  --color-error-light: #fef2f2;
+  --color-error-muted: #fca5a5;
+
+  --color-info: #0891b2;
+  --color-info-light: #f0f9ff;
+  --color-info-muted: #67e8f9;
+
+  /* ===== Gradients (Max 1 per template, subtle) ===== */
+  --gradient-hero: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-bg) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, #7c3aed 100%);
+  --gradient-subtle: linear-gradient(180deg, var(--color-bg-elevated) 0%, var(--color-bg) 100%);
+
+  /* ===== Overlay & Scrim ===== */
+  --color-overlay: rgba(10, 10, 15, 0.6);
+  --color-scrim: rgba(10, 10, 15, 0.4);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0a0a0f;
+    --color-bg-elevated: #111118;
+    --color-bg-subtle: #18181f;
+    --color-bg-inverse: #fafafa;
+
+    --color-fg: #fafafa;
+    --color-fg-muted: #a1a1aa;
+    --color-fg-subtle: #71717a;
+    --color-fg-inverse: #0a0a0f;
+
+    --color-border: #27272a;
+    --color-border-strong: #3f3f46;
+    --color-border-focus: #60a5fa;
+
+    --color-accent: #3b82f6;
+    --color-accent-hover: #60a5fa;
+    --color-accent-light: #1e3a5f;
+    --color-accent-muted: #1e40af;
+
+    --color-success: #10b981;
+    --color-success-light: #064e3b;
+    --color-success-muted: #34d399;
+
+    --color-warning: #f59e0b;
+    --color-warning-light: #78350f;
+    --color-warning-muted: #fbbf24;
+
+    --color-error: #ef4444;
+    --color-error-light: #7f1d1d;
+    --color-error-muted: #f87171;
+
+    --color-info: #06b6d4;
+    --color-info-light: #164e63;
+    --color-info-muted: #22d3ee;
+
+    --gradient-hero: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-bg) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, #a855f7 100%);
+    --gradient-subtle: linear-gradient(180deg, var(--color-bg-elevated) 0%, var(--color-bg) 100%);
+
+    --color-overlay: rgba(250, 250, 250, 0.1);
+    --color-scrim: rgba(250, 250, 250, 0.05);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: var(--color-fg);
+    --color-border-strong: var(--color-fg);
+    --color-fg-muted: var(--color-fg);
+    --color-fg-subtle: var(--color-fg);
+  }
+}

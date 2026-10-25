@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Gym" description="Industrial-style strength and conditioning gym." template="mafyn-gym" lang="en">
+  <section class="hero section-lg">
+    <div class="container">
+      <span class="hero-eyebrow">Strength & Conditioning</span>
+      <h1>Mafyn <span class="accent">Gym</span></h1>
+      <p class="hero-description">Industrial-style gym with barbells, rigs, and open floor space. Strength training for everyone.</p>
+      <div class="hero-actions">
+        <a href="#classes" class="btn btn-accent">Class Schedule</a>
+        <a href="#trial" class="btn">Free Trial</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Programs</span>
+        <h2 class="section-title">Train Hard</h2>
+        <p class="section-description">Strength, conditioning, and functional fitness for all levels.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Strength</span>
+          <h3 class="card-title">Barbell Club</h3>
+          <p class="card-text">Squat, bench, deadlift. Linear progression programming.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Conditioning</span>
+          <h3 class="card-title">Engine Class</h3>
+          <p class="card-text">Rowing, running, and conditioning intervals.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Mobility</span>
+          <h3 class="card-title">Mobility Lab</h3>
+          <p class="card-text">Joint health, flexibility, and recovery work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Gym · Jakarta, Indonesia</p>
+  </footer>
+</BaseLayout>

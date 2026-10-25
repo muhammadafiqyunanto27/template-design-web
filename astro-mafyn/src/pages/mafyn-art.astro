@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Art" description="Contemporary art gallery representing Indonesian artists." template="mafyn-art" lang="en">
+  <section class="hero section-lg">
+    <div class="container">
+      <span class="hero-eyebrow">Art Gallery</span>
+      <h1>Mafyn <span class="accent">Art</span></h1>
+      <p class="hero-description">Contemporary art gallery representing emerging and established Indonesian artists.</p>
+      <div class="hero-actions">
+        <a href="#exhibitions" class="btn btn-accent">Current Exhibition</a>
+        <a href="#artists" class="btn">Artists</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Current Exhibition</span>
+        <h2 class="section-title">New Perspectives</h2>
+        <p class="section-description">Solo exhibition by emerging Jakarta-based painter, opening March 15.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Painting</span>
+          <h3 class="card-title">Untitled #4</h3>
+          <p class="card-text">Oil on canvas, 120 x 150 cm, 2024.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Painting</span>
+          <h3 class="card-title">Field Study</h3>
+          <p class="card-text">Acrylic on linen, 100 x 120 cm, 2024.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Drawing</span>
+          <h3 class="card-title">Study for Light</h3>
+          <p class="card-text">Charcoal on paper, 70 x 100 cm, 2023.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Art · Jakarta, Indonesia</p>
+  </footer>
+</BaseLayout>

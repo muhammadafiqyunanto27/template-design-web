@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Pet Care" description="Veterinary clinic and pet wellness center." template="mafyn-pet-care" lang="en">
+  <section class="hero section-lg">
+    <div class="container">
+      <span class="hero-eyebrow">Veterinary Clinic</span>
+      <h1>Mafyn <span class="accent">Pet Care</span></h1>
+      <p class="hero-description">Comprehensive veterinary care for cats, dogs, and small animals. Vaccinations, surgery, and wellness exams.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-accent">Services</a>
+        <a href="#book" class="btn">Book Appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Services</span>
+        <h2 class="section-title">Pet Health</h2>
+        <p class="section-description">Complete veterinary care for your furry family members.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Wellness</span>
+          <h3 class="card-title">Wellness Exams</h3>
+          <p class="card-text">Annual checkups, vaccinations, and preventive care.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Surgery</span>
+          <h3 class="card-title">Surgical Services</h3>
+          <p class="card-text">Spay/neuter, soft tissue surgery, and emergency procedures.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Dental</span>
+          <h3 class="card-title">Dental Care</h3>
+          <p class="card-text">Dental cleaning, extractions, and oral health exams.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Pet Care · Jakarta, Indonesia</p>
+  </footer>
+</BaseLayout>

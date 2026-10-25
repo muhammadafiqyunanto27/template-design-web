@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Component showcase, themeable. For white-label, design system." />
+  <title>Modular Agency — Next.js International</title>
+  <style>
+    :root {
+      --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      --font-text:    "Inter", ui-sans-serif, system-ui, sans-serif;
+      --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+      --step-0: 1rem;   --step-1: 1.25rem;   --step-2: 1.563rem;
+      --step-3: 1.953rem; --step-4: 2.441rem;   --step-5: 3.052rem;
+      --step-6: 3.815rem;   --step-7: 4.769rem;
+      --space-3xs: 0.25rem; --space-2xs: 0.5rem;   --space-xs: 0.75rem;
+      --space-s:   1rem;     --space-m:   1.5rem;   --space-l:   2rem;
+      --space-xl:  3rem;     --space-2xl: 4.5rem;   --space-3xl: 6rem;
+      --space-section: clamp(3rem, 2rem + 5vw, 7rem);
+      --space-section-lg: clamp(5rem, 3rem + 8vw, 10rem);
+      --base:   #faf9f6;
+      --surface:#ffffff;
+      --line:   #ddd8d0;
+      --ink:    #0a0a0a;
+      --ink-2:  #4a4a4a;
+      --ink-3:  #8a8a8a;
+      --#e11d48: #e11d48;
+      --#e11d48-light: #e11d48LIGHT;
+      --radius: 0;
+      --border: 1px solid var(--line);
+      --dur: 220ms; --ease: cubic-bezier(0.2, 0, 0, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--base); }
+    body { font-family: var(--font-text); font-size: var(--step-0); line-height: 1.5; color: var(--ink); background: var(--base); -webkit-font-smoothing: antialiased; }
+    a { color: var(--#e11d48); text-decoration: none; border-bottom: 1px solid transparent; }
+    a:hover { border-bottom-color: var(--#e11d48); }
+    header { border-bottom: var(--border); background: var(--base); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: var(--space-4) var(--space-l); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+    .navbar-brand { font-family: var(--font-display); font-size: var(--step-4); font-weight: 800; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+    .navbar-brand span { color: var(--#e11d48); }
+    .navbar-nav { display: flex; gap: var(--space-4); }
+    .navbar-link { font-size: var(--step-0); color: var(--ink-2); text-decoration: none; border-bottom: 2px solid transparent; padding: var(--space-1) 0; }
+    .navbar-link:hover { color: var(--ink); border-bottom-color: var(--ink); }
+    .hero { padding-block: var(--space-section-lg) var(--space-2xl); text-align: left; max-width: 1200px; margin: 0 auto; padding-inline: var(--space-l); }
+    .hero-eyebrow { font-family: var(--font-display); font-size: var(--step-1); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--#e11d48); margin-bottom: var(--space-3); border-left: 3px solid var(--#e11d48); padding-left: var(--space-3); display: inline-block; }
+    .hero h1 { font-family: var(--font-display); font-size: var(--step-7); font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; color: var(--ink); margin-bottom: var(--space-6); max-width: 60ch; }
+    .hero h1 .#e11d48 { color: var(--#e11d48); }
+    .hero p { font-family: var(--font-text); font-size: var(--step-1); line-height: 1.6; color: var(--ink-2); max-width: 55ch; margin-bottom: var(--space-8); }
+    .hero-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-6); font-family: var(--font-display); font-size: var(--step-0); font-weight: 600; color: var(--ink); background: transparent; border: var(--border); border-radius: var(--radius); cursor: pointer; transition: all var(--dur) var(--ease); text-decoration: none; }
+    .btn:hover { background: var(--ink); color: var(--base); border-color: var(--ink); }
+    .btn:focus-visible { outline: 2px solid var(--#e11d48); outline-offset: 2px; }
+    .btn-#e11d48 { background: var(--#e11d48); color: var(--base); border-color: var(--#e11d48); }
+    .btn-#e11d48:hover { background: var(--ink); border-color: var(--ink); }
+    .section { max-width: 1200px; margin: 0 auto var(--space-3xl); padding: 0 var(--space-l); }
+    .section-eyebrow { font-family: var(--font-display); font-size: var(--step-1); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--#e11d48); margin-bottom: var(--space-2); border-left: 3px solid var(--#e11d48); padding-left: var(--space-3); display: inline-block; }
+    .section-title { font-family: var(--font-display); font-size: var(--step-5); font-weight: 800; line-height: 1.1; color: var(--ink); margin-bottom: var(--space-3); }
+    .section-description { font-family: var(--font-text); font-size: var(--step-1); line-height: 1.6; color: var(--ink-2); max-width: 60ch; margin-bottom: var(--space-6); }
+    .grid { display: grid; gap: var(--space-l); }
+    .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .card { border: var(--border); background: var(--surface); padding: var(--space-xl); border-radius: var(--radius); }
+    .card:hover { border-color: var(--#e11d48); }
+    .card-badge { font-size: var(--step-0); font-weight: 600; color: var(--#e11d48); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); display: inline-block; }
+    .card-title { font-family: var(--font-display); font-size: var(--step-2); font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: var(--space-2); }
+    .card-text { font-size: var(--step-0); color: var(--ink-2); line-height: 1.6; }
+    .footer { max-width: 1200px; margin: 0 auto var(--space-2xl); padding: var(--space-xl) var(--space-l); border-top: var(--border); font-family: var(--font-text); font-size: var(--step-0); color: var(--ink-3); text-align: center; }
+    footer a { color: var(--ink-3); }
+    .cta { text-align: left; border: var(--border); border-radius: var(--radius); padding: var(--space-3xl) var(--space-xl); }
+    .cta-title { font-family: var(--font-display); font-size: var(--step-6); font-weight: 800; color: var(--ink); margin-bottom: var(--space-4); }
+    .cta-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-6); }
+    .trust-bar { padding-block: var(--space-xl); border-bottom: var(--border); background: var(--surface); }
+    .trust-bar p { font-size: var(--step-0); color: var(--ink-2); text-align: center; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4); }
+    .logo-cloud { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-6); opacity: 0.4; transition: opacity var(--dur) var(--ease); filter: grayscale(100%); }
+    .logo-cloud:hover { opacity: 0.8; filter: grayscale(0%); }
+    .stat { display: flex; flex-direction: column; gap: var(--space-1); }
+    .stat-value { font-family: var(--font-mono); font-size: var(--step-5); font-weight: 700; color: var(--ink); }
+    .stat-label { font-size: var(--step-0); color: var(--ink-2); }
+    @media (max-width: 768px) {
+      .header-inner { padding: var(--space-3) var(--space-4); flex-direction: column; align-items: stretch; gap: var(--space-3); }
+      .navbar-nav { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+      .hero { padding-block: var(--space-2xl) var(--space-xl); padding-inline: var(--space-4); }
+      .hero h1 { font-size: var(--step-6); }
+      .section { padding: 0 var(--space-4); margin-bottom: var(--space-2xl); }
+      .grid-cols-3 { grid-template-columns: 1fr; }
+      .cta { padding: var(--space-2xl) var(--space-xl); }
+      footer { padding: var(--space-xl) var(--space-4); margin-bottom: var(--space-2xl); }
+    }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="navbar-brand">Template<span>Design</span></a>
+      <nav class="navbar-nav">
+        <a href="/nextjs-intl/">Next.js Intl</a>
+        <a href="/nextjs-id/">Next.js ID</a>
+        <a href="/astro-intl/">Astro Intl</a>
+        <a href="/astro-id/">Astro Indonesia</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero section-lg">
+    <span class="hero-eyebrow">Template</span>
+    <h1>Modular Agency<span class="accent"> — Next.js International</span></h1>
+    <p>Component showcase, themeable. For white-label, design system.</p>
+    <div class="hero-actions">
+      <a href="/" class="btn">← Kembali ke Home</a>
+      <a href="/nextjs-intl/" class="btn btn-accent">Lihat Semua Next.js International</a>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-l);">
+      <p>Dipercaya oleh pemimpin industri di seluruh dunia</p>
+      <div class="logo-cloud">
+        <div style="font-weight: 600; color: var(--ink-2); font-size: var(--step-0); font-family: var(--font-mono);">Global Financial Bank</div>
+        <div style="font-weight: 600; color: var(--ink-2); font-size: var(--step-0); font-family: var(--font-mono);">National Healthcare System</div>
+        <div style="font-weight: 600; color: var(--ink-2); font-size: var(--step-0); font-family: var(--font-mono);">Global E-commerce Platform</div>
+        <div style="font-weight: 600; color: var(--ink-2); font-size: var(--step-0); font-family: var(--font-mono);">Aerospace Leader</div>
+        <div style="font-weight: 600; color: var(--ink-2); font-size: var(--step-0); font-family: var(--font-mono);">Telecommunications Giant</div>
+        <div style="font-weight: 600; color: var(--ink-2); font-size: var(--step-0); font-family: var(--font-mono);">Government Agency</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-eyebrow">Company Profile</span>
+    <h2 class="section-title">Tentang Perusahaan</h2>
+    <p class="section-description">Modular Agency adalah salah satu template company profile terkemuka dalam koleksi kami, dirancang khusus untuk bisnis skala global. Setiap elemen dirancang dengan pendekatan Swiss Editorial — typography yang tajam, ruang yang cukup, dan warna yang hemat.</p>
+    <div class="grid grid-cols-3">
+      <div class="card">
+        <span class="card-badge">Framework</span>
+        <h3 class="card-title">Next.js</h3>
+        <p class="card-text">Dibangun dengan Next.js untuk performa optimal dan pengalaman pengembang yang nyaman.</p>
+      </div>
+      <div class="card">
+        <span class="card-badge">Locale</span>
+        <h3 class="card-title">English</h3>
+        <p class="card-text">Tersedia dalam Bahasa Inggris dan Bahasa Indonesia dengan format mata uang, tanggal, dan nomor telepon lokal.</p>
+      </div>
+      <div class="card">
+        <span class="card-badge">Static HTML</span>
+        <h3 class="card-title">Ready Deploy</h3>
+        <p class="card-text">Semua template adalah file HTML statis — bisa langsung di-deploy ke Vercel tanpa build process.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-eyebrow">Case Studies</span>
+    <h2 class="section-title">Dokumen Contoh</h2>
+    <p class="section-description">Contoh implementasi template ini untuk berbagai klien industri.</p>
+    <div class="grid grid-cols-3">
+      <div class="card">
+        <span class="card-badge">Bank Nasional</span>
+        <h3 class="card-title">Sistem Perbankan Digital</h3>
+        <p class="card-text">Migrasi platform perbankan inti ke cloud-native dengan uptime 99,99%.</p>
+      </div>
+      <div class="card">
+        <span class="card-badge">Rumah Sakit</span>
+        <h3 class="card-title">Sistem Rekam Medis</h3>
+        <p class="card-text">Digitalisasi rekam medis pasien dengan enkripsi end-to-end.</p>
+      </div>
+      <div class="card">
+        <span class="card-badge">E-commerce</span>
+        <h3 class="card-title">Platform Retail</h3>
+        <p class="card-text">Arsitektur edge-native untuk lonjakan trafik puncak.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2 class="cta-title">Siap Membangun Perusahaan Anda?</h2>
+    <div class="cta-actions">
+      <a href="/" class="btn">Kembali ke Home</a>
+      <a href="/nextjs-intl/" class="btn btn-accent">Lihat Semua Template</a>
+    </div>
+  </section>
+
+  <footer>
+    Template Design System · <a href="/" style="color: var(--ink-3);">Kembali ke Home</a>
+  </footer>
+
+</body>
+</html>

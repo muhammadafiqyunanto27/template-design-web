@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Pet" description="Pet supplies and grooming studio for cats and dogs." template="mafyn-pet" lang="en">
+  <section class="hero section-lg">
+    <div class="container">
+      <span class="hero-eyebrow">Pet Care</span>
+      <h1>Mafyn <span class="accent">Pet</span></h1>
+      <p class="hero-description">Premium pet food, accessories, and professional grooming for cats and dogs in Jakarta.</p>
+      <div class="hero-actions">
+        <a href="#shop" class="btn btn-accent">Shop Supplies</a>
+        <a href="#groom" class="btn">Book Grooming</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Products</span>
+        <h2 class="section-title">Quality Care</h2>
+        <p class="section-description">Nutritious food, durable toys, and gentle grooming products.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Food</span>
+          <h3 class="card-title">Premium Kibble</h3>
+          <p class="card-text">Grain-free recipes with real meat and vegetables.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Grooming</span>
+          <h3 class="card-title">Full Groom</h3>
+          <p class="card-text">Bath, brush, nail trim, and ear cleaning for all breeds.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Accessories</span>
+          <h3 class="card-title">Collars & Leashes</h3>
+          <p class="card-text">Handcrafted leather collars and matching leashes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Pet · Jakarta, Indonesia</p>
+  </footer>
+</BaseLayout>

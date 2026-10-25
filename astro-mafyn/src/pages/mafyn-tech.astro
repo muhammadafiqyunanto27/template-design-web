@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Tech" description="API-first infrastructure platform for developers." template="mafyn-tech" lang="en">
+  <section class="hero section-lg" style="background: var(--color-base); position: relative;">
+    <div style="position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(37,99,235,0.03) 49px, rgba(37,99,235,0.03) 50px); z-index: 0;"></div>
+    <div style="position: relative; z-index: 2;">
+      <span class="hero-eyebrow">Infrastructure Platform</span>
+      <h1>Mafyn <span class="accent">Tech</span></h1>
+      <p class="hero-description">Deploy APIs, databases, and frontend apps in seconds. Global edge network, automatic SSL, and zero-downtime deployments.</p>
+      <div class="hero-actions">
+        <a href="#docs" class="btn btn-accent">Start Building</a>
+        <a href="#pricing" class="btn">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Features</span>
+        <h2 class="section-title">Developer First</h2>
+        <p class="section-description">Everything you need to ship production-grade applications.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Edge Network</span>
+          <h3 class="card-title">Global Edge</h3>
+          <p class="card-text">Deploy across 250+ locations. Sub-10ms latency worldwide.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Database</span>
+          <h3 class="card-title">Managed Postgres</h3>
+          <p class="card-text">Fully managed PostgreSQL with automatic backups and point-in-time recovery.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">CI/CD</span>
+          <h3 class="card-title">Git Deploy</h3>
+          <p class="card-text">Push to Git, deploy automatically. Preview environments for every PR.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Pricing</span>
+        <h2 class="section-title">Simple, Transparent</h2>
+        <p class="section-description">Pay only for what you use. No hidden fees.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Free</span>
+          <h3 class="card-title">Hobby</h3>
+          <div class="stat-value number">$0</div>
+          <p class="card-text">Perfect for side projects and learning.</p>
+        </div>
+        <div class="card" style="border-color: var(--color-accent);">
+          <span class="card-badge">Popular</span>
+          <h3 class="card-title">Pro</h3>
+          <div class="stat-value number">$29</div>
+          <p class="card-text">For small teams and production apps.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Enterprise</span>
+          <h3 class="card-title">Enterprise</h3>
+          <div class="stat-value number">Contact</div>
+          <p class="card-text">Custom SLAs and dedicated support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Tech · Jakarta, Indonesia</p>
+  </footer>
+</BaseLayout>
