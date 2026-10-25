@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Fitness" description="Boutique fitness studio offering personal training and group classes." template="mafyn-fitness" lang="en">
+  <section class="hero section-lg">
+    <div class="container">
+      <span class="hero-eyebrow">Fitness Studio</span>
+      <h1>Mafyn <span class="accent">Fitness</span></h1>
+      <p class="hero-description">Personal training, group classes, and wellness coaching. Strength, mobility, and performance for every body.</p>
+      <div class="hero-actions">
+        <a href="#classes" class="btn btn-accent">View Classes</a>
+        <a href="#book" class="btn">Book Session</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Offerings</span>
+        <h2 class="section-title">Train & Transform</h2>
+        <p class="section-description">Personal training, small group classes, and wellness coaching.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Personal</span>
+          <h3 class="card-title">1-on-1 Training</h3>
+          <p class="card-text">Custom programming with certified personal trainers.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Group</span>
+          <h3 class="card-title">HIIT Classes</h3>
+          <p class="card-text">High-intensity interval training in small groups.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Mobility</span>
+          <h3 class="card-title">Mobility & Rehab</h3>
+          <p class="card-text">Injury prevention and movement restoration sessions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Fitness · Jakarta, Indonesia</p>
+  </footer>
+</BaseLayout>

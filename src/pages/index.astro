@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Design System" description="40 company profile templates — Next.js & Astro, International & Indonesia variants." template="mafyn-home" lang="en">
+  <section class="hero section-lg">
+    <span class="hero-eyebrow">Template Gallery</span>
+    <h1>40 company profile <span class="accent">templates</span></h1>
+    <p class="hero-description">
+      Swiss Rationalist design system — grid-absolute, typographic, unemotional.
+      Next.js &amp; Astro, International &amp; Indonesia variants.
+      No cards. No shadows. No gradients. No purple. Rules and space only.
+    </p>
+    <div class="hero-actions">
+      <a href="/nextjs-intl/" class="btn btn-accent">Browse Next.js Intl</a>
+      <a href="/nextjs-id/" class="btn">Browse Next.js ID</a>
+      <a href="/astro-intl/" class="btn">Browse Astro Intl</a>
+      <a href="/astro-id/" class="btn">Browse Astro Indonesia</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Choose Your Variant</span>
+        <h2 class="section-title">Four entry points</h2>
+        <p class="section-description">
+          Each page lists all templates for that framework and locale.
+          Every template is a standalone static page — deploy one at a time to Vercel.
+        </p>
+      </div>
+      <div class="grid grid-cols-2">
+        <div class="card">
+          <span class="card-badge">Framework</span>
+          <h3 class="card-title">Next.js App Router</h3>
+          <p class="card-text">React Server Components, App Router, static export.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Framework</span>
+          <h3 class="card-title">Astro Islands</h3>
+          <p class="card-text">Zero-JS-by-default, static-first.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Locale</span>
+          <h3 class="card-title">International</h3>
+          <p class="card-text">English locale, USD currency.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Locale</span>
+          <h3 class="card-title">Indonesia</h3>
+          <p class="card-text">Bahasa Indonesia, IDR currency, +62 WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Design System · <a href="https://github.com/muhammadafiqyunanto27/template-design-web" target="_blank" rel="noopener noreferrer">GitHub Repo</a></p>
+  </footer>
+</BaseLayout>

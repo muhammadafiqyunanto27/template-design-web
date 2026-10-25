@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Book" description="Independent bookstore and reading lounge." template="mafyn-book" lang="en">
+  <section class="hero section-lg">
+    <div class="container">
+      <span class="hero-eyebrow">Bookstore</span>
+      <h1>Mafyn <span class="accent">Book</span></h1>
+      <p class="hero-description">Independent bookstore and reading lounge. Indonesian literature, world literature, and design books.</p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn btn-accent">Browse Books</a>
+        <a href="#events" class="btn">Events</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Staff Picks</span>
+        <h2 class="section-title">Currently Reading</h2>
+        <p class="section-description">Books our team is loving this month.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Fiction</span>
+          <h3 class="card-title">Laut Bercerita</h3>
+          <p class="card-text">Laila Chudori's acclaimed novel about Indonesia's dark years.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Design</span>
+          <h3 class="card-title">Grid Systems</h3>
+          <p class="card-text">Josef Müller-Brockmann's classic on grid design.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Poetry</span>
+          <h3 class="card-title">Tenggelamnya Kapal van der Wijck</h3>
+          <p class="card-text">Hamka's beloved Indonesian novel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Book · Jakarta, Indonesia</p>
+  </footer>
+</BaseLayout>
