@@ -1,4 +1,4 @@
-﻿{
+
     "scripts":  {
                     "preview":  "astro preview",
                     "build":  "astro build",
