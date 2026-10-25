@@ -2,10 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "framework": null,
-  "buildCommand": "echo 'Static HTML - no build required'",
-  "devCommand": "echo 'Static site'",
-  "installCommand": "echo 'No dependencies'",
-  "outputDirectory": ".",
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/nextjs-intl", "destination": "/nextjs-intl/index.html" },
@@ -17,6 +13,7 @@
     { "source": "/astro-id", "destination": "/astro-id/index.html" },
     { "source": "/astro-id/:path*", "destination": "/astro-id/:path*" },
     { "source": "/templates/:template/:variant", "destination": "/templates/:template/:variant/index.html" },
-    { "source": "/templates/:template/:variant/:path*", "destination": "/templates/:template/:variant/:path*" }
+    { "source": "/templates/:template/:variant/:path*", "destination": "/templates/:template/:variant/:path*" },
+    { "source": "/:path*", "destination": "/:path*" }
   ]
 }

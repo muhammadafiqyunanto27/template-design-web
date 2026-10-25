@@ -1,0 +1,220 @@
+**
+ * Indonesia (Bahasa Indonesia) UI Dictionary
+ * Localized translations with Indonesian business context
+ */
+
+export const idDict = {
+  // Navigation
+  nav: {
+    home: 'Beranda',
+    about: 'Tentang Kami',
+    services: 'Layanan',
+    products: 'Produk',
+    solutions: 'Solusi',
+    caseStudies: 'Studi Kasus',
+    blog: 'Artikel',
+    news: 'Berita',
+    careers: 'Karir',
+    contact: 'Kontak',
+    login: 'Masuk',
+    getStarted: 'Mulai Sekarang',
+    requestDemo: 'Minta Demo',
+  },
+
+  // Hero
+  hero: {
+    scrollDown: 'Scroll ke bawah',
+    learnMore: 'Pelajari lebih lanjut',
+    watchDemo: 'Tonton demo',
+    tryFree: 'Coba gratis',
+    contactSales: 'Hubungi sales',
+    viewWork: 'Lihat karya kami',
+  },
+
+  // Buttons & CTAs
+  button: {
+    submit: 'Kirim',
+    send: 'Kirim',
+    subscribe: 'Berlangganan',
+    download: 'Unduh',
+    viewAll: 'Lihat semua',
+    loadMore: 'Muat lebih banyak',
+    readMore: 'Baca selengkapnya',
+    getInTouch: 'Hubungi kami',
+    startFree: 'Mulai gratis',
+    bookDemo: 'Jadwalkan demo',
+    talkToExpert: 'Bicara dengan ahlinya',
+  },
+
+  // Forms
+  form: {
+    name: 'Nama',
+    email: 'Email',
+    phone: 'Nomor Telepon / WhatsApp',
+    company: 'Perusahaan / Instansi',
+    role: 'Jabatan',
+    message: 'Pesan',
+    subject: 'Subjek',
+    required: 'Wajib diisi',
+    optional: 'Opsional',
+    placeholder: {
+      name: 'Nama Anda',
+      email: 'anda@perusahaan.co.id',
+      phone: '08xx-xxxx-xxxx',
+      company: 'Nama perusahaan',
+      message: 'Ada yang bisa kami bantu?',
+    },
+    validation: {
+      required: 'Kolom ini wajib diisi',
+      email: 'Format email tidak valid',
+      phone: 'Format nomor telepon tidak valid (contoh: 08xx-xxxx-xxxx)',
+      minLength: 'Minimal {min} karakter',
+      maxLength: 'Maksimal {max} karakter',
+    },
+    success: 'Terima kasih! Kami akan segera menghubungi Anda.',
+    error: 'Terjadi kesalahan. Silakan coba lagi.',
+    submitting: 'Mengirim...',
+  },
+
+  // Footer
+  footer: {
+    rights: 'Hak cipta dilindungi undang-undang.',
+    privacy: 'Kebijakan Privasi',
+    terms: 'Syarat & Ketentuan',
+    cookies: 'Kebijakan Cookie',
+    accessibility: 'Aksesibilitas',
+    sitemap: 'Peta Situs',
+    followUs: 'Ikuti kami',
+    newsletter: 'Newsletter',
+    newsletterDesc: 'Dapatkan update terbaru dari kami.',
+    emailPlaceholder: 'Masukkan email Anda',
+    subscribe: 'Berlangganan',
+    office: 'Kantor',
+    phone: 'Telepon',
+    email: 'Email',
+  },
+
+  // Trust & Social Proof
+  trust: {
+    trustedBy: 'Dipercaya oleh',
+    clients: 'klien di seluruh Indonesia',
+    partners: 'mitra',
+    customers: 'pelanggan',
+    reviews: 'ulasan',
+    rating: 'peringkat',
+    caseStudies: 'studi kasus',
+    testimonials: 'Apa kata klien kami',
+  },
+
+  // Meta
+  meta: {
+    loading: 'Memuat...',
+    error: 'Terjadi kesalahan',
+    notFound: 'Halaman tidak ditemukan',
+    backHome: 'Kembali ke beranda',
+    search: 'Cari',
+    filter: 'Filter',
+    sort: 'Urutkan',
+    clear: 'Bersihkan',
+    apply: 'Terapkan',
+    cancel: 'Batal',
+    confirm: 'Konfirmasi',
+    delete: 'Hapus',
+    edit: 'Edit',
+    save: 'Simpan',
+    close: 'Tutup',
+    next: 'Selanjutnya',
+    previous: 'Sebelumnya',
+    page: 'Halaman',
+    of: 'dari',
+    showing: 'Menampilkan',
+    results: 'hasil',
+    noResults: 'Tidak ada hasil ditemukan',
+  },
+
+  // Industry-specific (Indonesian context)
+  industry: {
+    enterprise: 'Enterprise / BUMN / Korporasi',
+    startup: 'Startup / Perusahaan Teknologi',
+    smb: 'UMKM / Kecil Menengah',
+    government: 'Pemerintah / Instansi Negara',
+    healthcare: 'Kesehatan / Rumah Sakit / Klinik',
+    finance: 'Keuangan / Perbankan / Fintech',
+    technology: 'Teknologi / IT / Software',
+    manufacturing: 'Manufaktur / Industri',
+    retail: 'Retail / E-commerce / Ritail',
+    education: 'Pendidikan / Kampus / Lembaga',
+  },
+
+  // Indonesian trust badges
+  trustBadges: {
+    bpom: 'Terdaftar BPOM RI',
+    halal: 'Sertifikat Halal MUI',
+    kominfo: 'Terdaftar Kominfo',
+    ojk: 'Terdaftar OJK',
+    bnsp: 'Sertifikasi BNSP',
+    iso: 'ISO 9001:2015',
+    pppk: 'PPPK Terdaftar',
+    akta: 'Akta Pendirian Notaris',
+    npwp: 'NPWP Terdaftar',
+  },
+
+  // Payment methods
+  payment: {
+    va: 'Virtual Account',
+    ewallet: 'E-Wallet',
+    retail: 'Minimarket',
+    cod: 'Bayar di Tempat (COD)',
+    transfer: 'Transfer Bank',
+    qris: 'QRIS',
+    creditCard: 'Kartu Kredit',
+    installment: 'Cicilan 0%',
+  },
+
+  // Address
+  address: {
+    province: 'Provinsi',
+    city: 'Kota / Kabupaten',
+    district: 'Kecamatan',
+    village: 'Kelurahan / Desa',
+    postalCode: 'Kode Pos',
+    rt: 'RT',
+    rw: 'RW',
+  },
+
+  // Timezones
+  timezone: {
+    wib: 'WIB (UTC+7)',
+    wita: 'WITA (UTC+8)',
+    wit: 'WIT (UTC+9)',
+  },
+
+  // Accessibility
+  a11y: {
+    skipToContent: 'Langsung ke konten utama',
+    skipToNav: 'Langsung ke navigasi',
+    menuOpen: 'Buka menu',
+    menuClose: 'Tutup menu',
+    searchOpen: 'Buka pencarian',
+    searchClose: 'Tutup pencarian',
+    expand: 'Perluas',
+    collapse: 'Ciutkan',
+    select: 'Pilih',
+    selected: 'Dipilih',
+    deselect: 'Batalkan pilih',
+    required: 'Wajib',
+    invalid: 'Tidak valid',
+    loading: 'Memuat',
+    liveRegion: 'Wilayah langsung',
+  },
+
+  // Legal / Compliance
+  legal: {
+    pdpa: 'Kepatuhan UU PDP',
+    personalData: 'Data Pribadi',
+    consent: 'Persetujuan',
+    withdrawConsent: 'Tarik Persetujuan',
+    dataRights: 'Hak Data Anda',
+    contactDpo: 'Hubungi DPO',
+  },
+};

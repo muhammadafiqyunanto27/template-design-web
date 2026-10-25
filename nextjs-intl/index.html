@@ -1,148 +1,258 @@
 ﻿<!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="10 company profile templates — Next.js International variant" />
   <title>Next.js International — Template Gallery</title>
-  <meta name="description" content="Koleksi 10 template company profile Next.js App Router (Internasional)" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0a0a0f;
-      color: #e8e8ed;
-      line-height: 1.6;
+    :root {
+      --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      --font-text:    "JetBrains Mono", ui-monospace, monospace;
+      --step-0: 0.875rem;   --step-1: 1.05rem;   --step-2: 1.26rem;
+      --step-3: 1.51rem;    --step-4: 1.81rem;   --step-5: 2.17rem;
+      --step-6: 2.60rem;    --step-7: 3.12rem;   --step-8: 3.75rem;
+      --space-1: 0.25rem;   --space-2: 0.5rem;   --space-3: 0.75rem;
+      --space-4: 1rem;      --space-5: 1.25rem;  --space-6: 1.5rem;
+      --space-8: 2rem;      --space-10: 2.5rem;  --space-12: 3rem;
+      --space-16: 4rem;     --space-24: 6rem;    --space-32: 8rem;
+      --base:   #faf9f6;
+      --surface:#ffffff;
+      --ink:    #0a0a0a;
+      --ink-2:  #4a4a4a;
+      --ink-3:  #8a8a8a;
+      --line:   #ddd8d0;
+      --accent: #2563eb;
+      --radius: 0;
+      --border: 1px solid var(--line);
+      --dur: 220ms; --ease: cubic-bezier(0.2, 0, 0, 1);
     }
-    a { color: #00d4ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--base); }
+    body {
+      font-family: var(--font-text);
+      font-size: var(--step-0);
+      line-height: 1.5;
+      color: var(--ink);
+      background: var(--base);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+    a:hover { border-bottom-color: var(--accent); }
+
     header {
-      background: rgba(10, 10, 15, 0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #1a1a22;
+      border-bottom: var(--border);
+      background: var(--base);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 10;
     }
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: var(--space-4) var(--space-6);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: var(--space-4);
     }
-    .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; color: #fff; }
-    .logo span { color: #00d4ff; }
-    nav a { color: #888899; margin-left: 2rem; font-size: 0.95rem; transition: color 0.2s; }
-    nav a:hover { color: #00d4ff; }
+    .logo {
+      font-family: var(--font-display);
+      font-size: var(--step-4);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .logo span { color: var(--accent); }
+    nav { display: flex; gap: var(--space-4); }
+    nav a {
+      font-size: var(--step-0);
+      color: var(--ink-2);
+      padding: var(--space-1) 0;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
     .hero {
-      padding: 4rem 1.5rem 3rem;
-      text-align: center;
-      background: radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+      padding: var(--space-32) var(--space-6) var(--space-24);
+      text-align: left;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: var(--step-1);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--space-3);
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-3);
+      display: inline-block;
     }
     .hero h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-family: var(--font-display);
+      font-size: var(--step-8);
       font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #fff 0%, #00d4ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      margin-bottom: var(--space-6);
+      max-width: 70ch;
     }
-    .hero p { color: #888899; margin-bottom: 2rem; }
+    .hero h1 .accent { color: var(--accent); }
+    .hero p {
+      font-size: var(--step-1);
+      color: var(--ink-2);
+      max-width: 55ch;
+      margin-bottom: var(--space-8);
+    }
+    .hero-actions {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.9rem 2rem;
-      background: #00d4ff;
-      color: #050508;
-      border: none;
-      border-radius: 6px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-back {
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      font-family: var(--font-display);
+      font-size: var(--step-0);
+      font-weight: 600;
+      color: var(--ink);
       background: transparent;
-      color: #00d4ff;
-      border: 1px solid #00d4ff;
-      margin-left: 1rem;
+      border: var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--dur) var(--ease);
+      text-decoration: none;
     }
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem 4rem; }
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+    .btn:hover {
+      background: var(--ink);
+      color: var(--base);
+      border-color: var(--ink);
     }
-    .section-title .dot { width: 12px; height: 12px; background: #00d4ff; border-radius: 50%; }
-    .templates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+
+    .section-header {
+      max-width: 1200px;
+      margin: 0 auto var(--space-16);
+      padding: 0 var(--space-6);
     }
-    .template-card {
-      background: #111116;
-      border: 1px solid #1a1a22;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-    .template-card:hover { transform: translateY(-4px); border-color: #00d4ff; }
-    .card-body { padding: 1.5rem; }
-    .card-badge {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      background: rgba(0, 212, 255, 0.1);
-      color: #00d4ff;
-      border: 1px solid rgba(0, 212, 255, 0.3);
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 700;
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: var(--step-1);
+      font-weight: 600;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.75rem;
+      color: var(--ink-3);
+      margin-bottom: var(--space-2);
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-3);
+      display: inline-block;
     }
-    .card-title { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
-    .card-description { font-size: 0.9rem; color: #888899; margin-bottom: 1.25rem; line-height: 1.5; }
-    .card-link {
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--step-5);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: var(--space-3);
+    }
+    .section-desc {
+      font-size: var(--step-1);
+      color: var(--ink-2);
+      max-width: 60ch;
+    }
+
+    .templates-list {
+      max-width: 1200px;
+      margin: 0 auto var(--space-32);
+      padding: 0 var(--space-6);
+    }
+    .template-row {
+      border: var(--border);
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      padding: var(--space-6);
+      display: grid;
+      grid-template-columns: 4fr 1fr 1fr auto;
+      gap: var(--space-4);
+      align-items: center;
+      transition: border-color var(--dur) var(--ease);
+    }
+    .template-row:hover { border-color: var(--accent); }
+    .template-number {
+      font-family: var(--font-display);
+      font-size: var(--step-5);
+      font-weight: 800;
+      color: var(--ink-3);
+      line-height: 1;
+    }
+    .template-title {
+      font-family: var(--font-display);
+      font-size: var(--step-2);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .template-desc {
+      font-size: var(--step-0);
+      color: var(--ink-2);
+      line-height: 1.5;
+    }
+    .template-framework,
+    .template-locale {
+      font-family: var(--font-text);
+      font-size: 0.75rem;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .template-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-top: auto;
-      padding: 0.75rem 1.5rem;
-      background: #0a0a0f;
-      border: 1px solid #1a1a22;
-      color: #00d4ff;
-      border-radius: 6px;
+      gap: var(--space-2);
+      font-family: var(--font-display);
+      font-size: var(--step-0);
       font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.2s;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      white-space: nowrap;
     }
-    .card-link:hover { background: #00d4ff; color: #050508; }
-    .note {
-      margin-top: 3rem;
-      padding: 1.5rem;
-      background: #0a0a0f;
-      border: 1px solid #1a1a22;
-      border-radius: 12px;
-      color: #888899;
-      font-size: 0.9rem;
+    .template-link:hover { border-bottom-color: var(--accent); }
+    .template-link::after { content: '\2192'; font-size: 0.75rem; }
+
+    footer {
+      max-width: 1200px;
+      margin: 0 auto var(--space-16);
+      padding: 0 var(--space-6);
+      border-top: var(--border);
+      padding-top: var(--space-8);
+      font-family: var(--font-text);
+      font-size: var(--step-0);
+      color: var(--ink-3);
+      text-align: center;
     }
-    .note code { color: #00d4ff; background: #1a1a22; padding: 0.2rem 0.4rem; border-radius: 4px; }
-    footer { text-align: center; padding: 3rem 1.5rem; color: #6b6b7b; font-size: 0.85rem; border-top: 1px solid #1a1a22; }
-    @media (max-width: 640px) {
-      .header-inner { flex-direction: column; gap: 1rem; align-items: flex-start; }
-      nav { margin-top: 0.5rem; }
-      nav a { margin: 0.5rem 1rem 0 0; }
+    footer a { color: var(--ink-3); }
+
+    @media (max-width: 768px) {
+      .header-inner { padding: var(--space-3) var(--space-4); flex-direction: column; align-items: stretch; gap: var(--space-3); }
+      nav { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+      .hero { padding: var(--space-24) var(--space-4) var(--space-16); }
+      .hero h1 { font-size: var(--step-6); }
+      .section-header { padding: 0 var(--space-4); margin-bottom: var(--space-12); }
+      .templates-list { padding: 0 var(--space-4); margin-bottom: var(--space-24); }
+      .template-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+      }
+      .template-link { grid-column: 1; }
+      footer { padding: 0 var(--space-4); margin-bottom: var(--space-12); }
     }
   </style>
 </head>
@@ -152,8 +262,8 @@
     <div class="header-inner">
       <a href="/" class="logo">Template<span>Design</span></a>
       <nav>
-        <a href="/">Home</a>
-        <a href="/nextjs-id/">Next.js Indonesia</a>
+        <a href="/nextjs-intl/">Next.js Intl</a>
+        <a href="/nextjs-id/">Next.js ID</a>
         <a href="/astro-intl/">Astro Intl</a>
         <a href="/astro-id/">Astro Indonesia</a>
       </nav>
@@ -161,129 +271,124 @@
   </header>
 
   <section class="hero">
-    <h1>Next.js <span>International</span></h1>
-    <p>10 template company profile dengan Next.js App Router — bahasa Inggris (Internasional)</p>
-    <div>
-      <a href="/" class="btn btn-back">← Kembali ke Home</a>
-    </div>
+    <span class="hero-eyebrow">Template Gallery</span>
+    <h1>Next.js <span class="accent">International</span></h1>
+    <p>10 company profile templates built with Next.js App Router. English locale.</p>
+    <a href="/" class="btn">← Back to Home</a>
   </section>
 
-  <div class="container">
-    <h2 class="section-title"><span class="dot"></span>Pilih Template</h2>
-    <div class="templates-grid">
+  <section class="section-header">
+    <span class="section-eyebrow">Templates</span>
+    <h2 class="section-title">Next.js International — 10 Designs</h2>
+    <p class="section-desc">Each template is a standalone static page. Click "Open" to view, or import the source folder directly into Vercel.</p>
+  </section>
 
-      <!-- Enterprise Authority -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">Enterprise</span>
-          <h3 class="card-title">Enterprise Authority</h3>
-          <p class="card-description">Restrained, authoritative, accessible. Untuk Fortune 500, pemerintah, big tech.</p>
-          <a href="/templates/enterprise-authority/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
-      <!-- Deep Tech Frontier -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">Deep Tech</span>
-          <h3 class="card-title">Deep Tech Frontier</h3>
-          <p class="card-description">Dark, technical, data-dense. Untuk aerospace, quantum, defense.</p>
-          <a href="/templates/deep-tech-frontier/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
-      <!-- UMKM Warmth -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">UMKM</span>
-          <h3 class="card-title">UMKM Warmth</h3>
-          <p class="card-description">Human, authentic, warm. Untuk kopi lokal, batik, bengkel, restoran keluarga.</p>
-          <a href="/templates/umkm-warmth/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
-      <!-- Creative Studio -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">Creative</span>
-          <h3 class="card-title">Creative Studio</h3>
-          <p class="card-description">Portfolio-first, visual density. Untuk desain agen, arsitek, production house.</p>
-          <a href="/templates/creative-studio/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
-      <!-- SaaS Product-Led -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">SaaS</span>
-          <h3 class="card-title">SaaS Product-Led</h3>
-          <p class="card-description">Demo-driven, developer-friendly. Untuk B2B SaaS, dev tools, AI startup.</p>
-          <a href="/templates/saas-product-led/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
-      <!-- Innovation Lab -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">Experimental</span>
-          <h3 class="card-title">Innovation Lab</h3>
-          <p class="card-description">Experimental, motion-heavy, glassmorphism. Untuk R&D, lab inovasi.</p>
-          <a href="/templates/innovation-lab/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
-      <!-- Corporate Institutional -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">Institutional</span>
-          <h3 class="card-title">Corporate Institutional</h3>
-          <p class="card-description">Structured, compliant. Untuk bank, asuransi, BUMN, universitas.</p>
-          <a href="/templates/corporate-institutional/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
-      <!-- Mission Driven -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">Mission</span>
-          <h3 class="card-title">Mission Driven</h3>
-          <p class="card-description">Story-led, evidence-based. Untuk non-profit, climate tech, sosial enterprise.</p>
-          <a href="/templates/mission-driven/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
-      <!-- Developer Platform -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">Developer</span>
-          <h3 class="card-title">Developer Platform</h3>
-          <p class="card-description">API-first, dark-native. Untuk cloud provider, API company, infrastructure.</p>
-          <a href="/templates/developer-platform/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
-      <!-- Modular Agency -->
-      <article class="template-card">
-        <div class="card-body">
-          <span class="card-badge">Modular</span>
-          <h3 class="card-title">Modular Agency</h3>
-          <p class="card-description">Component showcase, themeable. Untuk white-label, design system.</p>
-          <a href="/templates/modular-agency/nextjs-intl/" class="card-link">Buka Project →</a>
-        </div>
-      </article>
-
+  <div class="templates-list">
+    <div class="template-row">
+      <div>
+        <span class="template-number">01</span>
+        <div class="template-title">Enterprise Authority</div>
+        <div class="template-desc">Restrained, authoritative, accessible. For Fortune 500, governments, big tech.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/enterprise-authority/nextjs-intl/" class="template-link">Open</a>
     </div>
-
-    <div class="note">
-      <strong>Catatan:</strong> Setiap link di atas mengarah ke project yang telah kamu deploy terpisah di Vercel.
-      Jika belum deploy, klik tombol <code>Import single project</code> di Vercel untuk masing-masing folder template.
+    <div class="template-row">
+      <div>
+        <span class="template-number">02</span>
+        <div class="template-title">Deep Tech Frontier</div>
+        <div class="template-desc">Dark, technical, data-dense. For aerospace, quantum, defense.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/deep-tech-frontier/nextjs-intl/" class="template-link">Open</a>
+    </div>
+    <div class="template-row">
+      <div>
+        <span class="template-number">03</span>
+        <div class="template-title">UMKM Warmth</div>
+        <div class="template-desc">Human, authentic, warm. For local coffee, batik, bengkel, restoran keluarga.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/umkm-warmth/nextjs-intl/" class="template-link">Open</a>
+    </div>
+    <div class="template-row">
+      <div>
+        <span class="template-number">04</span>
+        <div class="template-title">Creative Studio</div>
+        <div class="template-desc">Portfolio-first, visual density. For design agencies, architects, production houses.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/creative-studio/nextjs-intl/" class="template-link">Open</a>
+    </div>
+    <div class="template-row">
+      <div>
+        <span class="template-number">05</span>
+        <div class="template-title">SaaS Product-Led</div>
+        <div class="template-desc">Demo-driven, developer-friendly. For B2B SaaS, dev tools, AI startup.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/saas-product-led/nextjs-intl/" class="template-link">Open</a>
+    </div>
+    <div class="template-row">
+      <div>
+        <span class="template-number">06</span>
+        <div class="template-title">Innovation Lab</div>
+        <div class="template-desc">Experimental, motion-heavy, glassmorphism. For R&amp;D, Google X, DeepMind.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/innovation-lab/nextjs-intl/" class="template-link">Open</a>
+    </div>
+    <div class="template-row">
+      <div>
+        <span class="template-number">07</span>
+        <div class="template-title">Corporate Institutional</div>
+        <div class="template-desc">Structured, compliant. For bank, asuransi, BUMN, universitas.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/corporate-institutional/nextjs-intl/" class="template-link">Open</a>
+    </div>
+    <div class="template-row">
+      <div>
+        <span class="template-number">08</span>
+        <div class="template-title">Mission Driven</div>
+        <div class="template-desc">Story-led, evidence-based. For non-profit, climate tech, sosial enterprise.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/mission-driven/nextjs-intl/" class="template-link">Open</a>
+    </div>
+    <div class="template-row">
+      <div>
+        <span class="template-number">09</span>
+        <div class="template-title">Developer Platform</div>
+        <div class="template-desc">API-first, dark-native. For cloud provider, API company, infrastructure.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/developer-platform/nextjs-intl/" class="template-link">Open</a>
+    </div>
+    <div class="template-row">
+      <div>
+        <span class="template-number">10</span>
+        <div class="template-title">Modular Agency</div>
+        <div class="template-desc">Component showcase, themeable. For white-label, design system.</div>
+      </div>
+      <span class="template-framework">Next.js</span>
+      <span class="template-locale">International</span>
+      <a href="/templates/modular-agency/nextjs-intl/" class="template-link">Open</a>
     </div>
   </div>
 
   <footer>
-    Template Design System · Next.js International · <a href="/" style="color: #00d4ff;">Kembali ke Home</a>
+    Template Design System · <a href="/" style="color: var(--ink-3);">Back to Home</a>
   </footer>
 
 </body>
 </html>
-
