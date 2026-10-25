@@ -1,15 +1,15 @@
-# Ignore all template source folders — only deploy static site from root
-enterprise-authority/
-deep-tech-frontier/
-umkm-warmth/
-creative-studio/
-saas-product-led/
-innovation-lab/
-corporate-institutional/
-mission-driven/
-developer-platform/
-modular-agency/
-shared/
+# Ignore root-level template source folders only (not templates/ subfolders)
+/enterprise-authority/
+/deep-tech-frontier/
+/umkm-warmth/
+/creative-studio/
+/saas-product-led/
+/innovation-lab/
+/corporate-institutional/
+/mission-driven/
+/developer-platform/
+/modular-agency/
+/shared/
 generate-configs.ps1
 generate-layouts-pages.ps1
 generate-remaining-css.ps1
@@ -18,6 +18,8 @@ generate-all-static.ps1
 update-induk-links.ps1
 update-induk-to-templates.ps1
 remove-bom.ps1
+regenerate-templates.ps1
+fix-induk-links.ps1
 DESIGN_BRIEF.md
 README.md
 *.ps1
