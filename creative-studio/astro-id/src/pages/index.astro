@@ -1,0 +1,89 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const navigation = [
+  { label: 'Home', href: '#' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Contact', href: '#contact' },
+];
+---
+
+<Layout title="Welcome to Creative Studio" description="Landing page for Creative Studio">
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand" aria-label="Home">
+        <span class="navbar-name">Creative Studio</span>
+      </a>
+      <nav class="navbar-nav" role="navigation" aria-label="Main navigation">
+        {navigation.map(item => <a href={item.href} class="navbar-link">{item.label}</a>)}
+      </nav>
+      <div class="navbar-actions">
+        <a href="/contact" class="btn btn-primary btn-sm">Contact</a>
+      </div>
+      <button class="navbar-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="navbar-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <h1 id="hero-title" class="heading-display hero-title">Welcome to Creative Studio</h1>
+        <p class="hero-description">This is the creative-studio template - Portfolio-first, visual density, curated chaos</p>
+        <div class="hero-actions">
+          <a href="/about" class="btn btn-primary btn-lg">Learn More</a>
+          <a href="/contact" class="btn btn-secondary btn-lg">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta">
+          <h2 id="cta-title" class="cta-title">Ready to Get Started?</h2>
+          <p class="cta-description">Contact us today to learn more about our services.</p>
+          <div class="cta-actions">
+            <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-name">Creative Studio</span>
+          <p class="footer-description">A modern company profile template.</p>
+        </div>
+        <nav aria-label="Quick Links">
+          <h3 class="footer-title">Quick Links</h3>
+          <div class="footer-links">
+            <a href="/" class="footer-link">Home</a>
+            <a href="/about" class="footer-link">About</a>
+            <a href="/services" class="footer-link">Services</a>
+            <a href="/contact" class="footer-link">Contact</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 Creative Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.navbar-toggle');
+    const nav = document.querySelector('.navbar-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+  </script>
+</Layout>

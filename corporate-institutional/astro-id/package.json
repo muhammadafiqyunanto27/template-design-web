@@ -1,0 +1,16 @@
+﻿{
+    "scripts":  {
+                    "preview":  "astro preview",
+                    "build":  "astro build",
+                    "dev":  "astro dev"
+                },
+    "name":  "corporate-institutional-astro-id",
+    "version":  "1.0.0",
+    "dependencies":  {
+                         "astro":  "^4.5.0"
+                     },
+    "private":  true,
+    "devDependencies":  {
+                            "typescript":  "^5.4.0"
+                        }
+}
