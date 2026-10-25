@@ -80,8 +80,8 @@ const links = lang === 'id' ? navLinks.id : navLinks.en;
 
   <script is:inline>
     (function() {
+      if (typeof document === 'undefined') return;
       const toggle = document.getElementById('themeToggle');
-      if (!toggle) return;
       const html = document.documentElement;
       const saved = localStorage.getItem('mafyn-theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -105,28 +105,28 @@ const links = lang === 'id' ? navLinks.id : navLinks.en;
           toggle.textContent = '☀️';
         }
       });
+
+      // Language toggle
+      const langToggle = document.getElementById('langToggle');
+      if (langToggle) {
+        langToggle.addEventListener('click', () => {
+          const currentPath = window.location.pathname;
+          const isIntl = currentPath.includes('/intl/');
+          const newPath = isIntl ? currentPath.replace('/intl/', '/id/') : currentPath.replace('/id/', '/intl/');
+          window.location.href = newPath;
+        });
+      }
+
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navbarNav = document.querySelector('.navbar-nav');
+      if (menuToggle && navbarNav) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = navbarNav.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', isOpen);
+        });
+      }
     })();
-
-    // Language toggle
-    const langToggle = document.getElementById('langToggle');
-    if (langToggle) {
-      langToggle.addEventListener('click', () => {
-        const currentPath = window.location.pathname;
-        const isIntl = currentPath.includes('/intl/');
-        const newPath = isIntl ? currentPath.replace('/intl/', '/id/') : currentPath.replace('/id/', '/intl/');
-        window.location.href = newPath;
-      });
-    }
-
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbarNav = document.querySelector('.navbar-nav');
-    if (menuToggle && navbarNav) {
-      menuToggle.addEventListener('click', () => {
-        const isOpen = navbarNav.classList.toggle('open');
-        menuToggle.setAttribute('aria-expanded', isOpen);
-      });
-    }
   </script>
 </body>
 </html>
