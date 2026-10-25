@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Auto" description="Automotive restoration and customization workshop." template="mafyn-auto" lang="en">
+  <section class="hero section-lg">
+    <div class="container">
+      <span class="hero-eyebrow">Automotive Workshop</span>
+      <h1>Mafyn <span class="accent">Auto</span></h1>
+      <p class="hero-description">Classic car restoration, custom fabrication, and performance tuning in Jakarta.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-accent">Services</a>
+        <a href="#gallery" class="btn">Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Services</span>
+        <h2 class="section-title">Build & Restore</h2>
+        <p class="section-description">From engine rebuilds to full custom builds.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Restoration</span>
+          <h3 class="card-title">Classic Restoration</h3>
+          <p class="card-text">Complete frame-off restoration for vintage vehicles.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Custom</span>
+          <h3 class="card-title">Custom Fabrication</h3>
+          <p class="card-text">Custom exhaust, suspension, and bodywork.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Performance</span>
+          <h3 class="card-title">Engine Tuning</h3>
+          <p class="card-text">ECU tuning, turbo upgrades, and dyno testing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Auto · Jakarta, Indonesia</p>
+  </footer>
+</BaseLayout>

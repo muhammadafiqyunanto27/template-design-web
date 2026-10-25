@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mafyn Coffee" description="Specialty coffee roastery from Jakarta. Single-origin beans, hand-roasted daily." template="mafyn-coffee" lang="en">
+  <section class="hero section-lg" style="background-image: url('/images/coffee-hero.jpg'); background-size: cover; background-position: center; position: relative; z-index: 0;">
+    <div style="position: absolute; inset: 0; background: rgba(10,10,10,0.55); z-index: 1;"></div>
+    <div style="position: relative; z-index: 2;">
+      <span class="hero-eyebrow">Coffee Roastery · Jakarta</span>
+      <h1>Mafyn <span class="accent">Coffee</span></h1>
+      <p class="hero-description">Single-origin beans hand-roasted in small batches. Sourced from Indonesian highlands, roasted fresh daily, delivered to your door.</p>
+      <div class="hero-actions">
+        <a href="#shop" class="btn btn-accent">Shop Coffee</a>
+        <a href="#about" class="btn">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Our Roast</span>
+        <h2 class="section-title">From Farm to Cup</h2>
+        <p class="section-description">We work directly with Indonesian farmers across Aceh, Gayo, Toraja, and Flores. Every bean is traced, roasted, and packed with care.</p>
+      </div>
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <span class="card-badge">Origin</span>
+          <h3 class="card-title">Aceh Gayo</h3>
+          <p class="card-text">Volcanic soil, high altitude, natural process. Notes of dark chocolate and tobacco.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Origin</span>
+          <h3 class="card-title">Toraja</h3>
+          <p class="card-text">Wet-hulled process, earthy body, spice notes. One of Indonesia's most prized coffees.</p>
+        </div>
+        <div class="card">
+          <span class="card-badge">Origin</span>
+          <h3 class="card-title">Flores</h3>
+          <p class="card-text">Washed process, bright acidity, citrus and floral notes. Clean and refined.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Subscribe</span>
+        <h2 class="section-title">Weekly Roast Report</h2>
+        <p class="section-description">New roasts, limited editions, and brewing tips delivered every Monday.</p>
+      </div>
+      <div class="cta">
+        <form style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <input type="email" placeholder="you@email.com" style="flex:1;padding:var(--space-3) var(--space-4);border:var(--border);font-family:var(--font-text);font-size:var(--step-0);background:transparent;">
+          <button type="submit" class="btn btn-accent">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mafyn Coffee · Jakarta, Indonesia · <a href="#contact">Contact</a></p>
+  </footer>
+</BaseLayout>
