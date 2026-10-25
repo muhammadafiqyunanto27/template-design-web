@@ -1,4 +1,4 @@
-
+{
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "framework": null,
@@ -15,6 +15,8 @@
     { "source": "/astro-intl", "destination": "/astro-intl/index.html" },
     { "source": "/astro-intl/:path*", "destination": "/astro-intl/:path*" },
     { "source": "/astro-id", "destination": "/astro-id/index.html" },
-    { "source": "/astro-id/:path*", "destination": "/astro-id/:path*" }
+    { "source": "/astro-id/:path*", "destination": "/astro-id/:path*" },
+    { "source": "/templates/:template/:variant", "destination": "/templates/:template/:variant/index.html" },
+    { "source": "/templates/:template/:variant/:path*", "destination": "/templates/:template/:variant/:path*" }
   ]
 }

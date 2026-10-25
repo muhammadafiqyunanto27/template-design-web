@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Platform — Next.js Indonesia</title>
+  <meta name="description" content="API-first, dark-native. Untuk cloud provider, API company, infrastructure." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0f;
+      color: #e8e8ed;
+      line-height: 1.6;
+    }
+    a { color: #c8553d; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: rgba(10, 10, 15, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1a1a22;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; color: #fff; }
+    .logo span { color: #c8553d; }
+    nav a { color: #888899; margin-left: 2rem; font-size: 0.95rem; transition: color 0.2s; }
+    nav a:hover { color: #c8553d; }
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(c8553d 0.05) 0%, transparent 50%);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #fff 0%, #c8553d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p { color: #888899; margin-bottom: 2rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: #c8553d;
+      color: #050508;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-back {
+      background: transparent;
+      color: #c8553d;
+      border: 1px solid #c8553d;
+      margin-left: 1rem;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .template-info {
+      background: #111116;
+      border: 1px solid #1a1a22;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .template-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: rgba(c8553d 0.1);
+      color: #c8553d;
+      border: 1px solid rgba(c8553d 0.3);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+    }
+    .template-title { font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+    .template-desc { color: #888899; margin-bottom: 1.5rem; line-height: 1.6; }
+    .template-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #6b6b7b;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #1a1a22;
+    }
+    .note {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: #0a0a0f;
+      border: 1px solid #1a1a22;
+      border-radius: 12px;
+      color: #888899;
+      font-size: 0.9rem;
+    }
+    footer { text-align: center; padding: 3rem 1.5rem; color: #6b6b7b; font-size: 0.85rem; border-top: 1px solid #1a1a22; }
+    @media (max-width: 640px) {
+      .header-inner { flex-direction: column; gap: 1rem; align-items: flex-start; }
+      nav { margin-top: 0.5rem; }
+      nav a { margin: 0.5rem 1rem 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">Template<span>Design</span></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/nextjs-intl/">Next.js Intl</a>
+        <a href="/nextjs-id/">Next.js ID</a>
+        <a href="/astro-intl/">Astro Intl</a>
+        <a href="/astro-id/">Astro Indonesia</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Developer Platform</h1>
+    <p>API-first, dark-native. Untuk cloud provider, API company, infrastructure.</p>
+    <div>
+      <a href="/" class="btn btn-back">← Kembali ke Home</a>
+      <a href="/nextjs-id/" class="btn" style="background: transparent; border: 1px solid #c8553d; color: #c8553d; margin-left: 1rem;">Lihat Semua Next.js Indonesia</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="template-info">
+      <span class="template-badge">Next.js Indonesia</span>
+      <h2 class="template-title">Developer Platform</h2>
+      <p class="template-desc">API-first, dark-native. Untuk cloud provider, API company, infrastructure.</p>
+      <div class="template-meta">
+        <span><strong>Template:</strong> </span>
+        <span><strong>Framework:</strong> Next.js</span>
+        <span><strong>Locale:</strong> Indonesia</span>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Status:</strong> Template ini tersimpan sebagai folder source di GitHub.<br>
+      Untuk menjalankan sebagai project Next.js/Astro penuh, import folder ini secara terpisah di Vercel:<br>
+      <code>github.com/muhammadafiqyunanto27/template-design-web/tree/main/developer-platform/nextjs-id/</code>
+    </div>
+  </div>
+
+  <footer>
+    Template Design System · <a href="/" style="color: #c8553d;">Kembali ke Home</a>
+  </footer>
+
+</body>
+</html>
