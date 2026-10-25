@@ -81,6 +81,7 @@ const links = lang === 'id' ? navLinks.id : navLinks.en;
   <script is:inline>
     (function() {
       if (typeof document === 'undefined') return;
+
       const toggle = document.getElementById('themeToggle');
       const html = document.documentElement;
       const saved = localStorage.getItem('mafyn-theme');
@@ -106,7 +107,6 @@ const links = lang === 'id' ? navLinks.id : navLinks.en;
         }
       });
 
-      // Language toggle
       const langToggle = document.getElementById('langToggle');
       if (langToggle) {
         langToggle.addEventListener('click', () => {
@@ -117,7 +117,6 @@ const links = lang === 'id' ? navLinks.id : navLinks.en;
         });
       }
 
-      // Mobile menu toggle
       const menuToggle = document.querySelector('.menu-toggle');
       const navbarNav = document.querySelector('.navbar-nav');
       if (menuToggle && navbarNav) {
