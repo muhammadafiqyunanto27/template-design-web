@@ -5,389 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="10 template company profile — Astro Indonesia variant" />
   <title>Astro Indonesia — Template Gallery</title>
-  <style>
-    :root {
-      --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-      --font-text:    "JetBrains Mono", ui-monospace, monospace;
-      --step-0: 0.875rem;   --step-1: 1.05rem;   --step-2: 1.26rem;
-      --step-3: 1.51rem;    --step-4: 1.81rem;   --step-5: 2.17rem;
-      --step-6: 2.60rem;    --step-7: 3.12rem;   --step-8: 3.75rem;
-      --space-1: 0.25rem;   --space-2: 0.5rem;   --space-3: 0.75rem;
-      --space-4: 1rem;      --space-5: 1.25rem;  --space-6: 1.5rem;
-      --space-8: 2rem;      --space-10: 2.5rem;  --space-12: 3rem;
-      --space-16: 4rem;     --space-24: 6rem;    --space-32: 8rem;
-      --base:   #faf9f6;
-      --surface:#ffffff;
-      --ink:    #0a0a0a;
-      --ink-2:  #4a4a4a;
-      --ink-3:  #8a8a8a;
-      --line:   #ddd8d0;
-      --accent: #c8553d;
-      --radius: 0;
-      --border: 1px solid var(--line);
-      --dur: 220ms; --ease: cubic-bezier(0.2, 0, 0, 1);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; background: var(--base); }
-    body {
-      font-family: var(--font-text);
-      font-size: var(--step-0);
-      line-height: 1.5;
-      color: var(--ink);
-      background: var(--base);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
-    a:hover { border-bottom-color: var(--accent); }
-
-    header {
-      border-bottom: var(--border);
-      background: var(--base);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: var(--space-4) var(--space-6);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4);
-    }
-    .logo {
-      font-family: var(--font-display);
-      font-size: var(--step-4);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-    }
-    .logo span { color: var(--accent); }
-    nav { display: flex; gap: var(--space-4); }
-    nav a {
-      font-size: var(--step-0);
-      color: var(--ink-2);
-      padding: var(--space-1) 0;
-      border-bottom: 2px solid transparent;
-    }
-    nav a:hover { color: var(--ink); border-bottom-color: var(--ink); }
-
-    .hero {
-      padding: var(--space-32) var(--space-6) var(--space-24);
-      text-align: left;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .hero-eyebrow {
-      font-family: var(--font-display);
-      font-size: var(--step-1);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: var(--space-3);
-      border-left: 3px solid var(--accent);
-      padding-left: var(--space-3);
-      display: inline-block;
-    }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: var(--step-8);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      color: var(--ink);
-      margin-bottom: var(--space-6);
-      max-width: 70ch;
-    }
-    .hero h1 .accent { color: var(--accent); }
-    .hero p {
-      font-size: var(--step-1);
-      color: var(--ink-2);
-      max-width: 55ch;
-      margin-bottom: var(--space-8);
-    }
-    .hero-actions {
-      display: flex;
-      gap: var(--space-3);
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-3) var(--space-6);
-      font-family: var(--font-display);
-      font-size: var(--step-0);
-      font-weight: 600;
-      color: var(--ink);
-      background: transparent;
-      border: var(--border);
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: all var(--dur) var(--ease);
-      text-decoration: none;
-    }
-    .btn:hover {
-      background: var(--ink);
-      color: var(--base);
-      border-color: var(--ink);
-    }
-
-    .section-header {
-      max-width: 1200px;
-      margin: 0 auto var(--space-16);
-      padding: 0 var(--space-6);
-    }
-    .section-eyebrow {
-      font-family: var(--font-display);
-      font-size: var(--step-1);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-      margin-bottom: var(--space-2);
-      border-left: 3px solid var(--accent);
-      padding-left: var(--space-3);
-      display: inline-block;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: var(--step-5);
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--ink);
-      margin-bottom: var(--space-3);
-    }
-    .section-desc {
-      font-size: var(--step-1);
-      color: var(--ink-2);
-      max-width: 60ch;
-    }
-
-    .templates-list {
-      max-width: 1200px;
-      margin: 0 auto var(--space-32);
-      padding: 0 var(--space-6);
-    }
-    .template-row {
-      border: var(--border);
-      border-left: 3px solid var(--accent);
-      background: var(--surface);
-      padding: var(--space-6);
-      display: grid;
-      grid-template-columns: 4fr 1fr 1fr auto;
-      gap: var(--space-4);
-      align-items: center;
-      transition: border-color var(--dur) var(--ease);
-    }
-    .template-row:hover { border-color: var(--accent); }
-    .template-number {
-      font-family: var(--font-display);
-      font-size: var(--step-5);
-      font-weight: 800;
-      color: var(--ink-3);
-      line-height: 1;
-    }
-    .template-title {
-      font-family: var(--font-display);
-      font-size: var(--step-2);
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.2;
-    }
-    .template-desc {
-      font-size: var(--step-0);
-      color: var(--ink-2);
-      line-height: 1.5;
-    }
-    .template-framework,
-    .template-locale {
-      font-family: var(--font-text);
-      font-size: 0.75rem;
-      color: var(--ink-3);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .template-link {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      font-family: var(--font-display);
-      font-size: var(--step-0);
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      white-space: nowrap;
-    }
-    .template-link:hover { border-bottom-color: var(--accent); }
-    .template-link::after { content: '\2192'; font-size: 0.75rem; }
-
-    footer {
-      max-width: 1200px;
-      margin: 0 auto var(--space-16);
-      padding: 0 var(--space-6);
-      border-top: var(--border);
-      padding-top: var(--space-8);
-      font-family: var(--font-text);
-      font-size: var(--step-0);
-      color: var(--ink-3);
-      text-align: center;
-    }
-    footer a { color: var(--ink-3); }
-
-    @media (max-width: 768px) {
-      .header-inner { padding: var(--space-3) var(--space-4); flex-direction: column; align-items: stretch; gap: var(--space-3); }
-      nav { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
-      .hero { padding: var(--space-24) var(--space-4) var(--space-16); }
-      .hero h1 { font-size: var(--step-6); }
-      .section-header { padding: 0 var(--space-4); margin-bottom: var(--space-12); }
-      .templates-list { padding: 0 var(--space-4); margin-bottom: var(--space-24); }
-      .template-row {
-        grid-template-columns: 1fr;
-        gap: var(--space-3);
-      }
-      .template-link { grid-column: 1; }
-      footer { padding: 0 var(--space-4); margin-bottom: var(--space-12); }
-    }
-  </style>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;800&family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" />
 </head>
 <body>
 
   <header>
     <div class="header-inner">
-      <a href="/" class="logo">Template<span>Design</span></a>
-      <nav>
-        <a href="/nextjs-intl/">Next.js Intl</a>
-        <a href="/nextjs-id/">Next.js ID</a>
-        <a href="/astro-intl/">Astro Intl</a>
-        <a href="/astro-id/">Astro Indonesia</a>
+      <a href="/" class="navbar-brand">Template<span>Design</span></a>
+      <nav class="navbar-nav">
+        <a href="/nextjs-intl/" class="navbar-link">Next.js Intl</a>
+        <a href="/nextjs-id/" class="navbar-link">Next.js ID</a>
+        <a href="/astro-intl/" class="navbar-link">Astro Intl</a>
+        <a href="/astro-id/" class="navbar-link">Astro Indonesia</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero section-lg">
     <span class="hero-eyebrow">Template Gallery</span>
     <h1>Astro <span class="accent">Indonesia</span></h1>
-    <p>10 template company profile dengan Astro. Bahasa Indonesia.</p>
+    <p class="hero-description">
+      10 template company profile dengan Astro Islands.
+      Bahasa Indonesia, IDR, +62 WhatsApp, BPOM/Halal/Kominfo/OJK.
+    </p>
     <a href="/" class="btn">← Kembali ke Home</a>
   </section>
 
   <section class="section-header">
     <span class="section-eyebrow">Template</span>
     <h2 class="section-title">Astro Indonesia — 10 Desain</h2>
-    <p class="section-desc">Setiap template adalah halaman statis mandiri. Klik "Buka" untuk melihat, atau impor folder sumber langsung ke Vercel.</p>
+    <p class="section-description">
+      Setiap template adalah halaman statis mandiri. Buka untuk preview, atau impor folder sumber ke Vercel.
+    </p>
   </section>
 
-  <div class="templates-list">
-    <div class="template-row">
-      <div>
-        <span class="template-number">01</span>
-        <div class="template-title">Enterprise Authority</div>
-        <div class="template-desc">Restrained, authoritative, accessible. Untuk Fortune 500, pemerintah, big tech.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/enterprise-authority/astro-id/index.html" class="template-link">Buka</a>
+  <div class="grid grid-cols-2">
+    <div class="card">
+      <span class="card-badge">01</span>
+      <h3 class="card-title">Enterprise Authority</h3>
+      <p class="card-text">Restrained, authoritative, accessible. Navy accent. Untuk Fortune 500, pemerintah, big tech.</p>
     </div>
-    <div class="template-row">
-      <div>
-        <span class="template-number">02</span>
-        <div class="template-title">Deep Tech Frontier</div>
-        <div class="template-desc">Dark, technical, data-dense. Untuk aerospace, quantum, defense.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/deep-tech-frontier/astro-id/index.html" class="template-link">Buka</a>
+    <div class="card">
+      <a href="/templates/enterprise-authority/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
     </div>
-    <div class="template-row">
-      <div>
-        <span class="template-number">03</span>
-        <div class="template-title">UMKM Warmth</div>
-        <div class="template-desc">Human, authentic, warm. Untuk kopi lokal, batik, bengkel, restoran keluarga.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/umkm-warmth/astro-id/index.html" class="template-link">Buka</a>
+    <div class="card">
+      <span class="card-badge">02</span>
+      <h3 class="card-title">Deep Tech Frontier</h3>
+      <p class="card-text">Dark, technical, data-dense. Cyan accent. Untuk aerospace, quantum, defense.</p>
     </div>
-    <div class="template-row">
-      <div>
-        <span class="template-number">04</span>
-        <div class="template-title">Creative Studio</div>
-        <div class="template-desc">Portfolio-first, visual density. Untuk design agen, arsitek, production house.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/creative-studio/astro-id/index.html" class="template-link">Buka</a>
+    <div class="card">
+      <a href="/templates/deep-tech-frontier/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
     </div>
-    <div class="template-row">
-      <div>
-        <span class="template-number">05</span>
-        <div class="template-title">SaaS Product-Led</div>
-        <div class="template-desc">Demo-driven, developer-friendly. Untuk B2B SaaS, dev tools, AI startup.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/saas-product-led/astro-id/index.html" class="template-link">Buka</a>
+    <div class="card">
+      <span class="card-badge">03</span>
+      <h3 class="card-title">UMKM Warmth</h3>
+      <p class="card-text">Human, authentic, warm. Terracotta accent. Untuk kopi lokal, batik, bengkel.</p>
     </div>
-    <div class="template-row">
-      <div>
-        <span class="template-number">06</span>
-        <div class="template-title">Innovation Lab</div>
-        <div class="template-desc">Experimental, motion-heavy, glassmorphism. Untuk R&amp;D, Google X, DeepMind.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/innovation-lab/astro-id/index.html" class="template-link">Buka</a>
+    <div class="card">
+      <a href="/templates/umkm-warmth/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
     </div>
-    <div class="template-row">
-      <div>
-        <span class="template-number">07</span>
-        <div class="template-title">Corporate Institutional</div>
-        <div class="template-desc">Structured, compliant. Untuk bank, asuransi, BUMN, universitas.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/corporate-institutional/astro-id/index.html" class="template-link">Buka</a>
+    <div class="card">
+      <span class="card-badge">04</span>
+      <h3 class="card-title">Creative Studio</h3>
+      <p class="card-text">Portfolio-first, visual density. Magenta accent. Untuk design agency, arsitek.</p>
     </div>
-    <div class="template-row">
-      <div>
-        <span class="template-number">08</span>
-        <div class="template-title">Mission Driven</div>
-        <div class="template-desc">Story-led, evidence-based. Untuk non-profit, climate tech, sosial enterprise.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/mission-driven/astro-id/index.html" class="template-link">Buka</a>
+    <div class="card">
+      <a href="/templates/creative-studio/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
     </div>
-    <div class="template-row">
-      <div>
-        <span class="template-number">09</span>
-        <div class="template-title">Developer Platform</div>
-        <div class="template-desc">API-first, dark-native. Untuk cloud provider, API company, infrastructure.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/developer-platform/astro-id/index.html" class="template-link">Buka</a>
+    <div class="card">
+      <span class="card-badge">05</span>
+      <h3 class="card-title">SaaS Product-Led</h3>
+      <p class="card-text">Demo-driven, developer-friendly. Blue accent. Untuk B2B SaaS, dev tools, AI startup.</p>
     </div>
-    <div class="template-row">
-      <div>
-        <span class="template-number">10</span>
-        <div class="template-title">Modular Agency</div>
-        <div class="template-desc">Component showcase, themeable. Untuk white-label, design system.</div>
-      </div>
-      <span class="template-framework">Astro</span>
-      <span class="template-locale">Indonesia</span>
-      <a href="/templates/modular-agency/astro-id/index.html" class="template-link">Buka</a>
+    <div class="card">
+      <a href="/templates/saas-product-led/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
+    </div>
+    <div class="card">
+      <span class="card-badge">06</span>
+      <h3 class="card-title">Innovation Lab</h3>
+      <p class="card-text">Experimental, motion-heavy. Emerald accent. Untuk R&amp;D lab, Google X style.</p>
+    </div>
+    <div class="card">
+      <a href="/templates/innovation-lab/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
+    </div>
+    <div class="card">
+      <span class="card-badge">07</span>
+      <h3 class="card-title">Corporate Institutional</h3>
+      <p class="card-text">Structured, compliant. Navy accent. Untuk bank, asuransi, universitas.</p>
+    </div>
+    <div class="card">
+      <a href="/templates/corporate-institutional/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
+    </div>
+    <div class="card">
+      <span class="card-badge">08</span>
+      <h3 class="card-title">Mission Driven</h3>
+      <p class="card-text">Story-led, evidence-based. Amber accent. Untuk non-profit, climate tech.</p>
+    </div>
+    <div class="card">
+      <a href="/templates/mission-driven/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
+    </div>
+    <div class="card">
+      <span class="card-badge">09</span>
+      <h3 class="card-title">Developer Platform</h3>
+      <p class="card-text">API-first, dark-native. Cyan accent. Untuk cloud provider, API company.</p>
+    </div>
+    <div class="card">
+      <a href="/templates/developer-platform/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
+    </div>
+    <div class="card">
+      <span class="card-badge">10</span>
+      <h3 class="card-title">Modular Agency</h3>
+      <p class="card-text">Component showcase, themeable. Rose accent. Untuk white-label, design system.</p>
+    </div>
+    <div class="card">
+      <a href="/templates/modular-agency/astro-id/index.html" class="btn-accent btn" style="justify-content:flex-end;">Buka →</a>
     </div>
   </div>
 
   <footer>
-    Template Design System · <a href="/" style="color: var(--ink-3);">Kembali ke Home</a>
+    Template Design System · <a href="/" style="color: var(--color-ink-3);">Kembali ke Home</a>
   </footer>
 
 </body>

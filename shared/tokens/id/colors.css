@@ -1,0 +1,97 @@
+/**
+ * Indonesia Color Token Overrides
+ * Extends intl/colors.css with culturally relevant semantic adjustments
+ * Import AFTER intl/colors.css
+ */
+
+/* ===== Indonesia-Specific Semantic Adjustments ===== */
+:root {
+  /* Accent shifts toward Indonesian brand red (Garuda, BCA, Telkom) */
+  --color-accent-id: #e61e2a;        /* Garuda/Indonesia red */
+  --color-accent-id-hover: #c41a24;
+  --color-accent-id-light: #fef2f2;
+  --color-accent-id-muted: #fca5a5;
+
+  /* Secondary accent - gold/yellow for national identity */
+  --color-accent-gold: #f5b800;      /* Garuda gold */
+  --color-accent-gold-light: #fffbeb;
+  --color-accent-gold-muted: #fcd34d;
+
+  /* Trust green - BPOM, Halal, Hijau */
+  --color-trust-halal: #008751;      /* MUI Halal green */
+  --color-trust-halal-light: #ecfdf5;
+  --color-trust-bpom: #0066cc;       /* BPOM blue */
+  --color-trust-bpom-light: #eff6ff;
+
+  /* Warm neutrals for UMKM/human-scale templates */
+  --color-warm-cream: #fdf8f3;
+  --color-warm-terracotta: #c8553d;
+  --color-warm-ochre: #d4a843;
+  --color-warm-sage: #7a9e7e;
+  --color-warm-batik-navy: #1b2a4a;
+  --color-warm-batik-brown: #5d4037;
+
+  /* Banking/Finance specific (BCA, Mandiri, BRI, BNI) */
+  --color-bca-blue: #0066cc;
+  --color-mandiri-gold: #ffcc00;
+  --color-bri-red: #e61e2a;
+  --color-bni-orange: #ff6600;
+
+  /* E-wallet brand colors (for payment UI) */
+  --color-gopay-green: #00aa13;
+  --color-ovo-purple: #6c3db8;       /* Only purple allowed - brand color */
+  --color-dana-blue: #007bff;
+  --color-shopeepay-orange: #ff6b00;
+  --color-linkaja-red: #e60012;
+
+  /* Gradient overrides for ID variant */
+  --gradient-hero-id: linear-gradient(135deg, var(--color-accent-id-light) 0%, var(--color-bg) 100%);
+  --gradient-warm-id: linear-gradient(135deg, var(--color-warm-cream) 0%, #fff8f0 100%);
+  --gradient-batik-id: linear-gradient(135deg, var(--color-warm-batik-navy) 0%, var(--color-warm-batik-brown) 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent-id: #ef4444;
+    --color-accent-id-hover: #f87171;
+    --color-accent-id-light: #450a0a;
+    --color-accent-id-muted: #7f1d1d;
+
+    --color-accent-gold: #fbbf24;
+    --color-accent-gold-light: #453100;
+    --color-accent-gold-muted: #78350f;
+
+    --color-trust-halal: #34d399;
+    --color-trust-halal-light: #064e3b;
+    --color-trust-bpom: #60a5fa;
+    --color-trust-bpom-light: #1e3a5f;
+
+    --color-warm-cream: #1c1917;
+    --color-warm-terracotta: #fb923c;
+    --color-warm-ochre: #fbbf24;
+    --color-warm-sage: #86efac;
+    --color-warm-batik-navy: #1e3a5f;
+    --color-warm-batik-brown: #8b4513;
+
+    --gradient-hero-id: linear-gradient(135deg, var(--color-accent-id-light) 0%, var(--color-bg) 100%);
+    --gradient-warm-id: linear-gradient(135deg, var(--color-warm-cream) 0%, #1c1917 100%);
+    --gradient-batik-id: linear-gradient(135deg, var(--color-warm-batik-navy) 0%, var(--color-warm-batik-brown) 100%);
+  }
+}
+
+/* ===== Batik Pattern CSS Variables (for decorative use) ===== */
+/* These are subtle, optional - templates opt-in */
+:root {
+  --batik-pattern-scale: 120px;
+  --batik-pattern-opacity: 0.03;
+  --batik-pattern-color: var(--color-accent-id);
+
+  /* Parang (diagonal) - resilience, continuity */
+  --batik-parang: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 0L120 120M120 0L0 120' stroke='%23e61e2a' stroke-width='0.5' fill='none' opacity='0.03'/%3E%3C/svg%3E");
+
+  /* Kawung (circle) - justice, purity */
+  --batik-kawung: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='15' stroke='%23e61e2a' stroke-width='0.5' fill='none' opacity='0.03'/%3E%3C/svg%3E");
+
+  /* Mega mendung (cloud) - patience, calm */
+  --batik-mega: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='100' viewBox='0 0 160 100'%3E%3Cpath d='M0 100Q40 60 80 100Q120 60 160 100' stroke='%23e61e2a' stroke-width='0.5' fill='none' opacity='0.03'/%3E%3C/svg%3E");
+}
